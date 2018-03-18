@@ -49,7 +49,7 @@ class MessageRvAdapter extends RecyclerView.Adapter<MessageRvAdapter.ViewHolder>
         Collections.sort(lista, new Comparator<Mensagem>() {
             @Override
             public int compare(Mensagem o1, Mensagem o2) {
-                return Integer.parseInt(o1.getId()) > Integer.parseInt(o2.getId()) ? -1 : Integer.parseInt(o1.getId()) < Integer.parseInt(o2.getId()) ? + 1 : 0;
+                return Integer.parseInt(o1.getId()) > Integer.parseInt(o2.getId()) ? -1 : Integer.parseInt(o1.getId()) < Integer.parseInt(o2.getId()) ? +1 : 0;
             }
         });
     }

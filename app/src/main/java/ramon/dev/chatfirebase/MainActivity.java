@@ -5,6 +5,8 @@ import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.Toolbar;
+import android.text.Editable;
+import android.text.TextWatcher;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
@@ -18,8 +20,6 @@ import com.google.firebase.database.Query;
 import com.google.firebase.database.ValueEventListener;
 
 import java.util.ArrayList;
-import java.util.Collections;
-import java.util.Comparator;
 
 public class MainActivity extends AppCompatActivity implements ChildEventListener {
     private RecyclerView rvConversa;
@@ -38,6 +38,25 @@ public class MainActivity extends AppCompatActivity implements ChildEventListene
 
         edMsg = findViewById(R.id.edMsg);
         btnEnviar = findViewById(R.id.btnEnviar);
+
+        edMsg.addTextChangedListener(new TextWatcher() {
+            public void afterTextChanged(Editable s) {
+                if(edMsg.getText().toString().trim().length()>0) {
+                    btnEnviar.setEnabled(true);
+                }else{
+                    btnEnviar.setEnabled(false);
+                }
+            }
+
+            public void beforeTextChanged(CharSequence s, int start, int count, int after) {
+
+            }
+
+            public void onTextChanged(CharSequence s, int start, int before, int count) {
+
+            }
+        });
+
         btnEnviar.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
