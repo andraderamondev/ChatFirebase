@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    app:layout_behavior="@string/appbar_scrolling_view_behavior"
+    tools:context="ramon.dev.chatfirebase.MainActivity"
+    tools:showIn="@layout/activity_main">
+
+    <View
+        android:id="@+id/header"
+        android:layout_width="wrap_content"
+        android:layout_height="1dp"
+        android:layout_alignParentTop="true"/>
+
+    <android.support.v7.widget.RecyclerView
+        android:id="@+id/rvConversa"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@id/header"
+        android:layout_above="@id/barraMsg"/>
+
+    <LinearLayout
+        android:id="@+id/barraMsg"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:orientation="horizontal"
+        android:gravity="center">
+
+        <EditText
+            android:id="@+id/edMsg"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"/>
+
+        <Button
+            android:id="@+id/btnEnviar"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Enviar"/>
+
+
+    </LinearLayout>
+
+</RelativeLayout>
